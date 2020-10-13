@@ -1,0 +1,36 @@
+##
+# Task 0
+##
+- O(n) or linear time to build the texts and calls lists
+- O(1) or contant time to fetch first and last record
+
+
+##
+# Task 1
+##
+- O(n) or linear time to build the texts and calls lists
+- O(n) for building the unique number of phone numbers
+
+##
+# Task 2
+##
+- O(n) or linear time to build the texts and calls lists
+- O(n) for iterating through all records and finding the call with max time
+
+##
+# Task 3
+##
+- O(n) or linear time to build the texts and calls lists
+- Part A
+    - O(n) to build the local calls list
+    - O(n log n) for sorting list (per https://wiki.python.org/moin/TimeComplexity)
+    - Cumulative: O(n) + O(n log n) = O(n) i.e. Linear
+- Part B
+    - O(n) to iterate through the calls list for % of calls calculation
+
+##
+# Task 4
+##
+- O(n) or linear time to build the texts and calls lists
+- O(n^2) to iterate through call_outgoing list and individual incoming calls and text lists
+- Cumulative: O(n^2) i.e. Quadratic

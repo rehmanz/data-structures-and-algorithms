@@ -23,5 +23,10 @@ for record in calls:
     if number not in phone_numbers_d:
         phone_numbers_d[number] = 1
 
+for record in texts:
+    number = record[0]
+    if number not in phone_numbers_d:
+        phone_numbers_d[number] = 1
+
 print("There are %s different telephone numbers in the records."
       %(len(phone_numbers_d)))

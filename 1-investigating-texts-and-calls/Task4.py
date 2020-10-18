@@ -52,4 +52,4 @@ for caller in calls_outgoing:
     if (caller not in calls_incoming) and (caller not in texts_outgoing) and (caller not in texts_incoming):
         telemarketers.append(caller)
 
-print("These numbers could be telemarketers: %s" %("\n".join(telemarketers)))
+print("These numbers could be telemarketers: %s" %("\n".join(sorted(telemarketers))))

@@ -19,6 +19,18 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
+def find_max(idx, numbers_d, max_record_t):
+    max_record_t = ()
+    for number in numbers_d:
+        number = record[idx]
+        date_time = record[2]
+        time_secs = record[3]
+        if not max_record_t:
+            max_record_t = (time_secs, number, date_time)
+        elif time_secs > max_record_t[0]:
+            max_record_t = (time_secs, number, date_time)
+    return max_record_t
+
 phone_numbers_d = {}
 
 for record in calls:
@@ -31,14 +43,8 @@ for record in calls:
         phone_numbers_d[number] += time_secs
 
 max_record_t = ()
-for number in phone_numbers_d:
-    number = record[0]
-    date_time = record[2]
-    time_secs = record[3]
-    if not max_record_t:
-       max_record_t = (time_secs, number, date_time)
-    elif time_secs > max_record_t[0]:
-        max_record_t = (time_secs, number, date_time)
+max_record_t = find_max(0, phone_numbers_d, max_record_t)
+max_record_t = find_max(1, phone_numbers_d, max_record_t)
 
 print("%s spent the longest time, %s seconds, on the phone during %s"
       %(max_record_t[1], max_record_t[0], max_record_t[2]))

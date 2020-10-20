@@ -19,14 +19,14 @@ Print a message:
 """
 phone_numbers_d = {}
 for record in calls:
-    number = record[0]
-    if number not in phone_numbers_d:
-        phone_numbers_d[number] = 1
+    if record[0] not in phone_numbers_d:
+        phone_numbers_d[record[0]] = 1
+    if record[1] not in phone_numbers_d:
+        phone_numbers_d[record[1]] = 1
 
 for record in texts:
-    number = record[0]
-    if number not in phone_numbers_d:
-        phone_numbers_d[number] = 1
+    if record[1] not in phone_numbers_d:
+        phone_numbers_d[record[1]] = 1
 
 print("There are %s different telephone numbers in the records."
       %(len(phone_numbers_d)))

@@ -44,13 +44,11 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 def isBangaloreCaller(number):
-    if number[0:4] == "(080":
+    if number.startswith("(080"):
         return True
-    # elif number[0] == "7" or number[0] == "8" or number[0] == "9":
-    #     return True
 
 def isBangaloreCallee(number):
-    if number == "7" or number == "8" or number == "9":
+    if number.startswith("7") or number.startswith("8") or number.startswith("9"):
         return True
 
 def isBangaloreCallerFromFixedLine(number):
@@ -67,7 +65,7 @@ for record in calls:
     if isBangaloreCaller(caller_number):
         if isBangaloreCaller(called_number):
             if called_number not in codes_l:
-                codes_l.append(called_number)
+                codes_l.append(called_number[0:5])
 
 print("The numbers called by people in Bangalore have codes: %s" %"\n".join(sorted(codes_l)))
 
